@@ -1,7 +1,7 @@
-
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
-import useColorScheme, { Mode }  from "../hooks/colorScheme";
+import { Mode }  from "../hooks/useColorScheme";
 import { Button, IconButton } from "./baseStyles";
+import {scheme} from "./scheme";
 
 function config(mode: Mode): ThemeConfig {
     return {
@@ -11,14 +11,19 @@ function config(mode: Mode): ThemeConfig {
 }
 
 export const theme = (mode: Mode) => {
-    const scheme = useColorScheme(mode)
+   
     return extendTheme({
         config: {
             ...config(mode)
         },
         styles: {
             body:{
-                fontFamily: "Raleway"
+                fontFamily: "Raleway !important"
+            },
+            global:{
+                "*": {
+                    fontFamily: "Raleway"
+                }
             }
         },
         breakpoints: {
@@ -30,7 +35,9 @@ export const theme = (mode: Mode) => {
             "2xl": "1536px",
         },
         colors: {
-            ...scheme
+            brand:{
+                ...scheme[mode]
+            }
         },
         components: {
             Button,

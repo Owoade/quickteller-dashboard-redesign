@@ -1,5 +1,5 @@
 import React from "react"
-import { Mode } from "./colorScheme";
+import { Mode } from "./useColorScheme";
 
 export function useTheme() {
   function getTheme(): Mode {
