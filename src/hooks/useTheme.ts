@@ -9,9 +9,9 @@ export function useTheme() {
     localStorage.setItem("ui-theme", theme.toString());
   }
 
-  const [currentTheme, setCurrentTheme] = React.useState<Mode>("light");
+  const [currentTheme, setCurrentTheme] = React.useState<Mode>(getTheme());
 
-  const toggleTheme = React.useCallback((newTheme: Mode) => {
+  const toggleTheme = React.useCallback((newTheme : Mode) => {
     setCurrentTheme(newTheme)
     saveTheme(newTheme);
   }, []);

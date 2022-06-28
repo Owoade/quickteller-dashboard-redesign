@@ -10,9 +10,7 @@ function config(mode: Mode): ThemeConfig {
     }
 }
 
-export const theme = (mode: Mode) => {
-   
-    return extendTheme({
+export const theme = (mode: Mode) =>  (extendTheme({
         config: {
             ...config(mode)
         },
@@ -46,4 +44,4 @@ export const theme = (mode: Mode) => {
 
     })
 
-}
+)

@@ -3,7 +3,7 @@ interface IColorSchemeModes{
     dark: IScheme;
 }
 
-interface IScheme {
+export interface IScheme {
     bgMain: string,
     bgContrast: string,
     typography: string,
