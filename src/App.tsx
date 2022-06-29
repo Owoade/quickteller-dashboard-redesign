@@ -5,15 +5,27 @@ import { theme } from "./chakra";
 import { useTheme } from "./hooks/useTheme";
 import Home from "./pages/Home";
 import { BrowserRouter } from "react-router-dom";
+import { Mode } from "./hooks/useColorScheme";
+import { IScheme, scheme } from "./chakra/scheme";
+
+interface ITheme {
+  toggleTheme: Function;
+  theme: Mode;
+  scheme: IScheme
+
+}
+export const ThemeContext = React.createContext({} as ITheme)
 
 function App() {
-  const { currentTheme } = useTheme();
+  const { currentTheme, toggleTheme } = useTheme();
   return (
     <React.Fragment>
       <ColorModeScript
         initialColorMode={theme(currentTheme).config.initialColorMode}
       />
+
       <ChakraProvider theme={theme(currentTheme)}>
+        <ThemeContext.Provider value={{toggleTheme, theme: currentTheme, scheme: scheme[currentTheme]}}>
         <div className="App">
           <BrowserRouter>
             <Routes>
@@ -21,6 +33,8 @@ function App() {
             </Routes>
           </BrowserRouter>
         </div>
+        </ThemeContext.Provider> 
+        
       </ChakraProvider>
     </React.Fragment>
   );

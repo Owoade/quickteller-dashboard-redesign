@@ -1,10 +1,9 @@
-import { Box, Flex, Spacer, Text } from "@chakra-ui/react";
-import React, { useContext } from "react";
+import { Box, Flex, Text } from "@chakra-ui/react";
+import { useContext } from "react";
 import { IconType } from "react-icons";
 import * as RI from "react-icons/ri";
-import { useColorScheme } from "../hooks/useColorScheme";
-import { useTheme } from "../hooks/useTheme";
-import { ThemeContext } from "../pages/Home";
+import { ThemeContext } from "../App";
+
 interface ILink {
   path: string;
   name: string;
@@ -76,9 +75,9 @@ const Navigation = () => {
 };
 
 function NavItem({ link }: { link: ILink }) {
-  const Icon = link.Icon;
 
-  const { scheme }= useContext(ThemeContext);
+  const Icon = link.Icon;
+  const {scheme} = useContext(ThemeContext)
 
   return (
     <Box

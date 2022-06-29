@@ -1,8 +1,6 @@
 import { Flex, Text, Image } from "@chakra-ui/react";
-import { useContext } from "react";
-import { ThemeContext } from "../pages/Home";
+
 const Logo = () => {
-  const {scheme} = useContext(ThemeContext)
 
   const logoStyles = {
     color: "brand.logo",
@@ -15,7 +13,7 @@ const Logo = () => {
       transform: "rotate(120deg)",
     },
     _before: {
-      backgroundColor: scheme.bgMain,
+      backgroundColor: "brand.bgMain",
       width: "80px",
       height: "5px",
       content: '""',
@@ -29,7 +27,7 @@ const Logo = () => {
         fontWeight="extrabold"
         fontSize="20px"
         fontFamily="Ubuntu"
-        color={scheme.logo}
+        color={"brand.logo"}
         position="relative"
         _after={{ ...logoStyles._after, content: '""', position: "absolute" }}
         _before={{ ...logoStyles._before, position: "absolute" }}
