@@ -36,7 +36,7 @@ const Header = () => {
         justifyContent="space-between"
       >
         {/* Space Filler */}
-        <Box width="15%" height="20px"></Box>
+        <Box width="5%" height="20px"></Box>
         {/* Seacrch and currency */}
         <Flex>
           <InputGroup color={"brand.typography"}>
@@ -111,8 +111,22 @@ const Header = () => {
             color={scheme.typography}
             aria-label={`toggle theme`}
             onClick={() => toggleTheme(theme === "light" ? "dark" : "light")}
+            style={{ transform: "translateX(-1em)"}}
           />
           <Avatar size = "sm" name='Segun Adebayo' src='https://bit.ly/sage-adebayo' />
+          <Box transform="translateY(-.4em)">
+          <DropDown Items={[
+            {
+              text: "Segun Adebayo"
+            },{
+              text: "Lanre Malumi"
+            },{
+              text:"Owoade Anuoluwapo"
+            }
+          ]} />
+
+          </Box>
+         
         </HStack>
       </Flex>
     </Box>

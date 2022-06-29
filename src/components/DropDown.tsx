@@ -28,23 +28,26 @@ const DropDown = ({ Items }: { Items: IDropdownItems[] }) => {
   const bottomList = useRef<null | HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
 
-  
-
   return (
-    <Box cursor="pointer">
+    <Box>
       {/* Selected Item */}
       <HStack
         px={2}
         onClick={() => setIsOpen((prev) => !prev)}
-        width="100px"
+        width="fit-content"
         color={"brand.typography"}
         transform="translateY(.3em)"
       >
-        {FirstItem?.Descriptor?.type === "image" ? (
-          <Image src={FirstItem?.Descriptor.asset as string} width="16px" />
-        ) : (
-          <FirstItemIcon />
+        {FirstItem.Descriptor && (
+          <Box>
+            {FirstItem?.Descriptor?.type === "image" ? (
+              <Image src={FirstItem?.Descriptor.asset as string} width="32px" />
+            ) : (
+              <FirstItemIcon />
+            )}
+          </Box>
         )}
+
         <Text
           transform="translateX(-.3em)"
           fontSize="13px"
@@ -65,15 +68,32 @@ const DropDown = ({ Items }: { Items: IDropdownItems[] }) => {
         mt={1}
         pb={"5px"}
       >
-        {items.filter(item => item.text !== FirstItem.text).map((item, i) => (
-          <DropDownChild itemIndex={i} item={item} setItems={setItems} setIsOpen={setIsOpen} />
-        ))}
+        {items
+          .filter((item) => item.text !== FirstItem.text)
+          .map((item, i) => (
+            <DropDownChild
+              itemIndex={i}
+              item={item}
+              setItems={setItems}
+              setIsOpen={setIsOpen}
+            />
+          ))}
       </Box>
     </Box>
   );
 };
 
-function DropDownChild({ itemIndex,item, setItems, setIsOpen }: { item: IDropdownItems, setItems: Function, itemIndex: number, setIsOpen: Function }) {
+function DropDownChild({
+  itemIndex,
+  item,
+  setItems,
+  setIsOpen,
+}: {
+  item: IDropdownItems;
+  setItems: Function;
+  itemIndex: number;
+  setIsOpen: Function;
+}) {
   const Icon = item.Descriptor?.asset as IconType;
 
   return (
@@ -83,16 +103,21 @@ function DropDownChild({ itemIndex,item, setItems, setIsOpen }: { item: IDropdow
       width="100px"
       color={"brand.typography"}
       transform="translateY(.3em)"
-      onClick={()=>{
-         setItems( (items: IDropdownItems[]) => [item].concat( items.filter(_item => item.text !== _item.text) ));
-         setIsOpen(false)
+      onClick={() => {
+        setItems((items: IDropdownItems[]) =>
+          [item].concat(items.filter((_item) => item.text !== _item.text))
+        );
+        setIsOpen(false);
       }}
     >
-      {item?.Descriptor?.type === "image" ? (
-        <Image src={item?.Descriptor.asset as string} width="16px" />
-      ) : (
-        <Icon />
-      )}
+      { item.Descriptor && <Box>
+        {item?.Descriptor?.type === "image" ? (
+          <Image src={item?.Descriptor.asset as string} width="16px" />
+        ) : (
+          <Icon />
+        )}
+      </Box>}
+
       <Text
         transform="translateX(-.3em)"
         fontSize="13px"
