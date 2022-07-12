@@ -1,4 +1,4 @@
-import { ComponentStyleConfig, keyframes } from "@chakra-ui/react";
+import { ComponentStyleConfig } from "@chakra-ui/react";
 
 export const Button: ComponentStyleConfig = {
     baseStyle: {
@@ -7,6 +7,11 @@ export const Button: ComponentStyleConfig = {
         _focus: {
             outline: "none"
         }
+    }
+}
+export const Heading: ComponentStyleConfig = {
+    baseStyle: {
+        fontFamily: "Raleway"
     }
 }
 

@@ -16,7 +16,7 @@ export interface IScheme {
 export const scheme: IColorSchemeModes = {
     light: {
         bgMain:"#FFFFFF",
-        bgContrast: "#E5E5E5",
+        bgContrast: "#F7F8FA",
         typography: "#1D1D1D",
         typoContrast: "#1D1D1D",
         accent: "#00ACF6",

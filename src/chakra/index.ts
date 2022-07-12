@@ -1,6 +1,6 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react";
 import { Mode }  from "../hooks/useColorScheme";
-import { Button, IconButton } from "./baseStyles";
+import { Button, IconButton, Heading } from "./baseStyles";
 import {scheme} from "./scheme";
 
 function config(mode: Mode): ThemeConfig {
@@ -19,7 +19,7 @@ export const theme = (mode: Mode) =>  (extendTheme({
                 fontFamily: "Raleway !important"
             },
             global:{
-                "*": {
+                "*" : {
                     fontFamily: "Raleway"
                 }
             }
@@ -39,7 +39,8 @@ export const theme = (mode: Mode) =>  (extendTheme({
         },
         components: {
             Button,
-            IconButton
+            IconButton,
+            Heading
         }
 
     })
