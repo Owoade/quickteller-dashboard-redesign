@@ -17,7 +17,7 @@ export interface ICardType {
   balance: string;
 }
 
-declare const _ICard: ICardType;
+export declare const _ICard: ICardType;
 
 const Card = ({ bank, type, balance }: ICardType) => {
   const assets = function (
@@ -108,7 +108,7 @@ const Card = ({ bank, type, balance }: ICardType) => {
           Current eCash Balance
         </Text>
         <Heading size="md" color="white">
-          ₦5,750
+          ₦{balance}
         </Heading>
       </Box>
       <Flex mt={6} w="100%">

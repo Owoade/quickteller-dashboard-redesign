@@ -1,7 +1,7 @@
 import { Box } from '@chakra-ui/react';
 import * as React from 'react';
 
-interface IWrapper {
+export interface IWrapper {
     children: JSX.Element
 }
 
