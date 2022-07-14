@@ -23,7 +23,7 @@ export const scheme: IColorSchemeModes = {
         accent: "#00ACF6",
         logo:"#003C58",
         overlay: "#9de0ff65",
-        shadow: "4px 13px 21px 0px rgba(181,181,181,0.75)"
+        shadow: " 0px 4px 25px rgba(197, 197, 197, 0.15);"
     },
     dark: {
         bgMain: "#0D0D0D",

@@ -66,11 +66,12 @@ const Card = ({ bank, type, balance }: ICardType) => {
         width: "300px",
         height: "300px",
         borderRadius: "50%",
-        left: "-10em",
-        top: "50px",
+        left: "-9.5em",
+        top: "45px",
         border: "28px solid white",
         background: "transparent",
-        opacity: 0.1,
+        opacity: 0.1
+        
       }}
       _before={{
         content: "''",
@@ -78,7 +79,7 @@ const Card = ({ bank, type, balance }: ICardType) => {
         width: "300px",
         height: "300px",
         borderRadius: "50%",
-        left: "-10.2em",
+        left: "-10.9em",
         top: "76px",
         border: "25px solid white",
         background: "transparent",

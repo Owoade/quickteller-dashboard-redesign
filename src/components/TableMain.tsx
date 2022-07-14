@@ -1,5 +1,8 @@
 import { Table, TableContainer, Tbody, Td, Th, Thead, Tr } from "@chakra-ui/react";
+import { ThemeContext } from "../App";
 import { useParams } from "react-router-dom"; 
+import { useContext } from "react";
+import { RiMore2Line } from "react-icons/ri";
 
 const tableNames = [
   "All",
@@ -20,6 +23,7 @@ interface ITable {
 
 const TableMain = () => {
   const { transactionType } = useParams();
+  const { scheme } = useContext(ThemeContext)
   const tableData: ITable[] =[ {
     type: "All",
     heading: ["Date", "Activity", "Amount", "References", "Status", "Action"],
@@ -186,7 +190,7 @@ const TableMain = () => {
  const mainTable = tableData.find( table => table.type === transactionType ) ?? tableData[0];
 
   return(
-    <TableContainer w="100%" bgColor="brand.bgMain" boxShadow="brand.shadow" >
+    <TableContainer w="100%" p={3} overflowX="auto" borderRadius="10px" bgColor="brand.bgMain" boxShadow={scheme.shadow} >
   <Table variant='unstyled'>
     <Thead>
       <Tr>
@@ -196,9 +200,11 @@ const TableMain = () => {
     <Tbody>
         { mainTable.data.map( data => (
           <Tr>
-          { data.map( (text, i ) => i === 3 ?  (<Td fontSize="12px">{text.split(" ")[0] } <br /> {text.split(" ")[1]}</Td>) : (<Td fontSize="12px">{text}</Td>) )}
+          { data.map( (text, i ) => i === 3 ?  (<Td fontSize="12px">{text.split(" ")[0] } <br /> {text.split(" ")[1]}</Td>) : (<Td fontSize="12px">{text}</Td> )  )}
+          <Td textAlign="center"> <RiMore2Line style={{ display: "block", transform: "translateX(0.7em)"}} /></Td>
         </Tr>
         ))}
+
     </Tbody>
     
   </Table>
