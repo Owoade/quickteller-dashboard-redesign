@@ -1,11 +1,9 @@
 import {
   Box,
-  ComponentWithAs,
   HStack,
   Image,
   Text,
-  TextProps,
-  useOutsideClick,
+  chakra
 } from "@chakra-ui/react";
 import { useContext, useRef, useState } from "react";
 import { IconType } from "react-icons";
@@ -20,7 +18,7 @@ interface IDropdownItems {
   };
 }
 
-const DropDown = ({ Items }: { Items: IDropdownItems[] }) => {
+const DropDown = ({ Items, position }: { Items: IDropdownItems[], position?: "default"  }) => {
   const { scheme } = useContext(ThemeContext);
   const [items, setItems] = useState<IDropdownItems[]>(Items);
   let FirstItem = items[0];
@@ -29,14 +27,14 @@ const DropDown = ({ Items }: { Items: IDropdownItems[] }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <Box>
+    <Box cursor="pointer">
       {/* Selected Item */}
       <HStack
         px={2}
         onClick={() => setIsOpen((prev) => !prev)}
         width="fit-content"
         color={"brand.typography"}
-        transform="translateY(.3em)"
+        transform={ position === "default" ? " " :  "translateY(.3em)"}
       >
         {FirstItem.Descriptor && (
           <Box>

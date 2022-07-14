@@ -1,17 +1,20 @@
-import { Box, Flex } from "@chakra-ui/react";
-import CardSection from "./CardSection";
+import { Box } from "@chakra-ui/react";
 import Header from "./Header";
 import OverviewSection from "./OverviewSection";
+import TransactionSection from "./TransactionSection";
 import Wrapper from "./Wrapper";
 
 const MainContent = () => {
   return (
-    <Box height="100vh" bgColor={"brand.bgContrast"} width="80%" ml={"20%"}>
+    <Box height="100%" bgColor={"brand.bgContrast"} width="80%" ml={"20%"}>
       {/* <Header /> */}
       <Header />
       {/* Body */}
       <Wrapper>
-        <OverviewSection />
+        <Box w="100%">
+          <OverviewSection />
+          <TransactionSection />
+        </Box>
       </Wrapper>
     </Box>
   );
