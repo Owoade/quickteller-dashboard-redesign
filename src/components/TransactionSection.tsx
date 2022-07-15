@@ -7,7 +7,7 @@ const TransactionSection = () => {
       <Heading as="h3" size="md">
         Recent Transactions
       </Heading>
-      <Flex>
+      <Flex my={3}>
         <TableSection width={"70%"} />
       </Flex>
     </Box>

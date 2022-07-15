@@ -32,17 +32,19 @@ const TableMain = () => {
   return (
     <TableContainer
       w="100%"
+      my={6}
       p={3}
       overflowX="auto"
       borderRadius="10px"
       bgColor="brand.bgMain"
       boxShadow={scheme.shadow}
+
     >
       <Table variant="unstyled">
         <Thead>
           <Tr>
             {mainTable.heading.map((text) => (
-              <Th fontSize="10px">{text}</Th>
+              <Th fontSize="10px" fontFamily="">{text}</Th>
             ))}
           </Tr>
         </Thead>
@@ -54,7 +56,30 @@ const TableMain = () => {
                   <Td fontSize="12px">
                     {text.split(" ")[0]} <br /> {text.split(" ")[1]}
                   </Td>
-                ) : i === 1 ? parseVal(text) : i === 4 ? <Td position="relative" fontSize="12px" borderRadius="10px" > <chakra.span border={`1px solid ${getStatusColor(text)}`} color={ getStatusColor(text) } borderRadius="20px" p={"3px 8px"}>{text}</chakra.span> {text === "Failed" ? <RiRefreshLine style={{ position: "absolute", right: 0, top: "30px"}} /> : null }</Td> : (
+                ) : i === 1 ? (
+                  parseVal(text)
+                ) : i === 4 ? (
+                  <Td position="relative" fontSize="12px" borderRadius="10px">
+                    {" "}
+                    <HStack>
+                      {" "}
+                      <chakra.span
+                        border={`1px solid ${getStatusColor(text)}`}
+                        color={getStatusColor(text)}
+                        borderRadius="20px"
+                        p={"1px 8px"}
+                        height="fit-content"
+                        width="70px"
+                        textAlign="center"
+                      >
+                        {text}{" "}
+                      </chakra.span>{" "}
+                      {text === "Failed" ? (
+                        <RiRefreshLine style={{ transform: "translateX(2em)"}} />
+                      ) : null}{" "}
+                    </HStack>{" "}
+                  </Td>
+                ) : (
                   <Td fontSize="12px">{text}</Td>
                 )
               )}
@@ -110,19 +135,17 @@ const TableMain = () => {
     );
   }
 
-  function parseVal( _string:string ){
+  function parseVal(_string: string) {
+    if (transactionType === "Money Transfer") return getBankLogo(_string);
+    if (transactionType === "Airtime Purchase")
+      return getServiceProviderLogo(_string);
 
-    if( transactionType === "Money Transfer" ) return getBankLogo(_string);
-    if( transactionType === "Airtime Purchase" ) return getServiceProviderLogo(_string)
-
-    return <Td fontSize="12px"> {_string} </Td>
-
-    
+    return <Td fontSize="12px"> {_string} </Td>;
   }
 
-  function getServiceProviderLogo(_desc: string){
+  function getServiceProviderLogo(_desc: string) {
     const phoneNumber = _desc.split("*")[0];
-    const serviceProvider =  _desc.split("*")[1];
+    const serviceProvider = _desc.split("*")[1];
 
     let logoSrc = "";
 
@@ -145,37 +168,32 @@ const TableMain = () => {
       case "9M":
         logoSrc =
           "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/9mobile_zq1cpk.png";
-      break;
+        break;
     }
 
     return (
       <Td>
         <HStack>
           {" "}
-          <chakra.span fontSize="12px"> { phoneNumber }</chakra.span>{" "}
-          <Image w="16px" h="16px" src={ logoSrc } />{" "}
+          <chakra.span fontSize="12px"> {phoneNumber}</chakra.span>{" "}
+          <Image w="16px" h="16px" src={logoSrc} />{" "}
         </HStack>
       </Td>
     );
   }
 
-  function getStatusColor( status: "Success" | "Pending" | "Failed"  ){
-    
-    switch(status){
-
-      case "Success": 
-      return "#36D277";
+  function getStatusColor(status: "Success" | "Pending" | "Failed") {
+    switch (status) {
+      case "Success":
+        return "#36D277";
 
       case "Pending":
-      return "#F5D77C";
+        return "#F5D77C";
 
       case "Failed":
-      return "#F08585";
-
+        return "#F08585";
     }
-
   }
-  
 };
 
 export default TableMain;
