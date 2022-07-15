@@ -30,6 +30,7 @@ function App() {
           <BrowserRouter>
             <Routes>
               <Route path="/" element={<Home />}></Route>
+              <Route path="/transactions/:transactionType" element={<Home />}></Route>
             </Routes>
           </BrowserRouter>
         </div>

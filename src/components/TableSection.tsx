@@ -48,7 +48,7 @@ const TableSection = () => {
         <Box w="70%">
           <Flex justifyContent="space-between" w="100%">
             {links.map((link) => (
-              <ChakraLink position="relative" _after={ link.name === activeLink ? { content: "''", position: "absolute", width:"fit-content", backgroundColor: "brand.overlay", padding:"15px, 3px" } : { visibility: "no-visible" } } fontSize="12px" color="brand.logo" to={link.path}>
+              <ChakraLink position="relative" fontWeight={ activeLink === link.name ? "extrabold" : ""} fontSize="12px" color="brand.logo" to={`/transactions/${link.name}`}>
                 {link.name}
               </ChakraLink>
             ))}
