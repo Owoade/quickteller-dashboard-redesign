@@ -1,15 +1,13 @@
-import { Box, Flex, Heading, VStack, chakra, Text } from "@chakra-ui/react";
+import { Box, Flex, Heading, chakra, Text } from "@chakra-ui/react";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 import DropDown from "./DropDown";
+import { expenses } from "../utils/data";
+import { Pie, PieChart } from "recharts";
 
 const AnalyticsSection = () => {
   const { scheme } = useContext(ThemeContext);
-  const expenses = [
-    { type: "Daily", amount: "₦3,000" },
-    { type: "Weekly", amount: "₦5,000" },
-    { type: "Monthly", amount: "₦23,200" },
-  ];
+
   return (
     <Box
       bgColor="brand.bgMain"
@@ -25,12 +23,36 @@ const AnalyticsSection = () => {
         <DropDown Items={[{ text: "Last month" }]} />
       </Flex>
 
-      <Flex>
-        <VStack>
-            <chakra.span>daily</chakra.span>
-            <Text>₦3,000</Text>
-        </VStack>
+      <Flex
+        w="100%"
+        mt={5}
+        pb={3}
+        justifyContent="space-between"
+        borderBottom="1px solid #F2F2F2"
+      >
+        {expenses.map((expense) => (
+          <Box textAlign="center">
+            <chakra.span fontSize="13px" color="grey">
+              {expense.type}
+            </chakra.span>
+            <Text>{expense.amount}</Text>
+          </Box>
+        ))}
       </Flex>
+      <PieChart width={200} height={200}>
+        <Pie
+          dataKey={"percent"}
+          data={[
+            { name: "75%", percent: 75, fill: "#2D9CDB" },
+            { name: "70%", percent: 10, fill: "#F2994A" },
+            { name: "5%", percent: 5, fill: "#F2C94C"},
+            { name: "10%", percent: 10, fill: "#EB5757" }
+          ]}
+          strokeWidth={0}
+          strokeOpacity={0}
+          label={"70%"}
+        />
+      </PieChart>
     </Box>
   );
 };
