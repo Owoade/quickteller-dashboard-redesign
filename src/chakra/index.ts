@@ -16,7 +16,8 @@ export const theme = (mode: Mode) =>  (extendTheme({
         },
         styles: {
             body:{
-                fontFamily: "Raleway !important"
+                fontFamily: "Raleway !important",
+                backgroundColor: "brand.bgContrast"
             },
             global:{
                 "*" : {

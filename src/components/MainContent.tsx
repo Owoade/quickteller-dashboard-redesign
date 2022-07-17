@@ -6,7 +6,7 @@ import Wrapper from "./Wrapper";
 
 const MainContent = () => {
   return (
-    <Box height="100%" bgColor={"brand.bgContrast"} width="80%" ml={"20%"}>
+    <Box height="100%" pb={5} bgColor={"brand.bgContrast"} width="80%" ml={"20%"}>
       {/* <Header /> */}
       <Header />
       {/* Body */}

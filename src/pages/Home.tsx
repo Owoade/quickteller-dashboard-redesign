@@ -5,7 +5,7 @@ import SideBar from "../components/SideBar";
 const Home = () => {
 
   return (
-    <Box position="relative" color="brand.typography">
+    <Box position="relative" color="brand.typography" bgColor="brand.Contrast">
         <SideBar />
         <MainContent />
     </Box>
