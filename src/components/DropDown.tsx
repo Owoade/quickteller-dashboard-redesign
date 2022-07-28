@@ -35,6 +35,7 @@ const DropDown = ({ Items, position }: { Items: IDropdownItems[], position?: "de
         width="fit-content"
         color={"brand.typography"}
         transform={ position === "default" ? " " :  "translateY(.3em)"}
+        zIndex={3}
       >
         {FirstItem.Descriptor && (
           <Box>
@@ -101,6 +102,7 @@ function DropDownChild({
       width="100px"
       color={"brand.typography"}
       transform="translateY(.3em)"
+      zIndex={5}
       onClick={() => {
         setItems((items: IDropdownItems[]) =>
           [item].concat(items.filter((_item) => item.text !== _item.text))

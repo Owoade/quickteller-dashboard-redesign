@@ -42,7 +42,7 @@ const TableSection = () => {
 
   
   return (
-    <Box w="60%" >
+    <Box w="60%" height="100%" >
       {/* Header Section  */}
       <Flex my={3} justifyContent="space-between" w="100%">
         <Box w="70%">
@@ -59,6 +59,14 @@ const TableSection = () => {
            <DropDown position="default" Items={ [
             {
                 text:"Recent"
+            },{
+              text: "Older"
+            },{
+              text: "Failed"
+            },{
+              text: "Pending"
+            },{
+              text: "Successful"
             }
            ] } />
 

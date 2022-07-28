@@ -26,13 +26,13 @@ export const scheme: IColorSchemeModes = {
         shadow: " 0px 4px 25px rgba(197, 197, 197, 0.15);"
     },
     dark: {
-        bgMain: "#0D0D0D",
-        bgContrast:"#0E0E0E",
+        bgMain: "#000000",
+        bgContrast:"#111111",
         typography: "#E2E2E2",
         typoContrast:"#BDBDBD",
         accent:"#00ACF6",
         logo: "#00ACF6",
-        overlay:"#9de0ff65",
+        overlay:"#32657c52",
         shadow: "10px 9px 12px 0px rgba(10,10,10,0.66)"
     }
 

@@ -8,7 +8,7 @@ const TransactionSection = () => {
       <Heading as="h3" size="md">
         Recent Transactions
       </Heading>
-      <Flex my={3} w="100%" justifyContent="space-between">
+      <Flex my={3} w="100%" height="fit-content" justifyContent="space-between">
         <TableSection width={"70%"} />
         <AnalyticsSection />
       </Flex>

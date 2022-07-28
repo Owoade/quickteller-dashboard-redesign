@@ -20,7 +20,7 @@ const AnalyticsSection = () => {
       borderRadius="10px"
       boxShadow={scheme.shadow}
       p={5}
-      w="34%"
+      w={{lg:"34%", base:"38%"}}
       height="fit-content"
       transform="translateY(3.5em)"
     >
@@ -28,7 +28,9 @@ const AnalyticsSection = () => {
         <Heading transform="translateY(.2em)" fontSize={"18px"}>
           All Expenses
         </Heading>
-        <DropDown Items={[{ text: "Last month" }]} />
+        <DropDown
+         Items={[{ text: "Last month" }, { text: "March"},{ text: "February"}]} 
+         />
       </Flex>
 
       <Flex

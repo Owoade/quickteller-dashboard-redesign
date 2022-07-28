@@ -5,19 +5,19 @@ import { _ICard } from "../components/Card";
 
 const navTable = [
      [
-      { bank: "main", type: "mastercard", balance: "2,000" },
-      { bank: "gtb", type: "verve", balance: "2,000" },
-      { bank: "alat", type: "mastercard", balance: "5,000" },
+      { bank: "main", type: "mastercard", balance: "2,000",cvc: "243" },
+      { bank: "gtb", type: "verve", balance: "2,000",cvc: "128" },
+      { bank: "alat", type: "mastercard", balance: "5,000",cvc: "923" },
     ],
     [
-        { bank: "gtb", type: "verve", balance: "2,000" },
-        { bank: "alat", type: "mastercard", balance: "5,000" },
-        { bank: "main", type: "mastercard", balance: "2,000" }
+        { bank: "gtb", type: "verve", balance: "2,000",cvc: "128" },
+        { bank: "alat", type: "mastercard", balance: "5,000",cvc: "923" },
+        { bank: "main", type: "mastercard", balance: "2,000",cvc: "243" }
     ],
     [
-        { bank: "alat", type: "mastercard", balance: "5,000" },
-        { bank: "gtb", type: "verve", balance: "2,000" },
-        { bank: "main", type: "mastercard", balance: "2,000" },
+        { bank: "alat", type: "mastercard", balance: "5,000",cvc: "923" },
+        { bank: "gtb", type: "verve", balance: "2,000",cvc: "128" },
+        { bank: "main", type: "mastercard", balance: "2,000",cvc: "421" },
     ]
 ];
 interface ctxValue {

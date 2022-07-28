@@ -9,23 +9,11 @@ const CardStack = ({ cards }: { cards: ICardType[] }) => {
   const { scheme } = useContext(ThemeContext)
   return (
     <>
-      {/* <Box
-        zIndex={10}
-        bgColor="#52E586"
-        transform="translateY(.8em)"
-        width="fit-content"
-        m={".2em auto"}
-        display="block"
-        p={1}
-        borderRadius="50%"
-      >
-        <RiCheckLine fontSize={"18px"} color="white" />
-      </Box> */}
       <Box  width="100%"  position="relative" mt={5} height="175px">
         {cards.map((card, i) => (
           <Box
             position="absolute"
-            transform={`translateX(${i * 30}px)`}
+            transform={{lg:`translateX(${i * 30}px)`, base:"translateX(0)"}}
             width="100%"
             zIndex={3 - i}
             boxShadow={ i === 2 ? scheme.shadow : ""}

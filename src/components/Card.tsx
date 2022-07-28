@@ -15,6 +15,7 @@ export interface ICardType {
   bank: "main" | "gtb" | "alat";
   type: "mastercard" | "verve";
   balance: string;
+  cvc: string;
 }
 
 export declare const _ICard: ICardType;
@@ -32,7 +33,7 @@ const Card = ({ bank, type, balance }: ICardType) => {
 
       case "gtb":
         bankImage = "https://res.cloudinary.com/dles2mycv/image/upload/v1657580841/gtb_u7b1oc.png";
-        bgColor = "#F1936B";
+        bgColor = "#e28258";
       break;
 
       case "main":

@@ -32,6 +32,7 @@ const Logo = () => {
         _after={{ ...logoStyles._after, content: '""', position: "absolute" }}
         _before={{ ...logoStyles._before, position: "absolute" }}
         transform = "translateY(.3em)"
+        display={{xl:"block", base:"none"}}
       >
         Ouickteller
       </Text>

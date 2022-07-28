@@ -47,20 +47,7 @@ const Header = () => {
                 children={<RiSearchLine />}
               />
             </InputGroup>
-            {/* <HStack width="100px" color={"brand.typography"}>
-            <Image
-              width="16px"
-              src="https://res.cloudinary.com/dles2mycv/image/upload/v1656370743/nigeria_nox0vt.png"
-            />
-            <Text
-              transform="translateX(-.3em)"
-              fontSize="13px"
-              fontWeight="extrabold"
-            >
-              NG
-            </Text>
-            <FaAngleDown fontSize="12px" />
-          </HStack> */}
+           
 
             <DropDown
               Items={[
@@ -99,6 +86,7 @@ const Header = () => {
                 },
               ]}
             />
+            
           </Flex>
           {/* Profile and Tools */}
           <HStack>

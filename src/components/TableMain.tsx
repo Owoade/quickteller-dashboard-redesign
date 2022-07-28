@@ -32,6 +32,7 @@ const TableMain = () => {
   return (
     <TableContainer
       w="100%"
+      height="21.5em"
       my={6}
       p={3}
       overflowX="auto"

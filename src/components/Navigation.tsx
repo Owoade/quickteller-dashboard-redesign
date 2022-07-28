@@ -63,9 +63,9 @@ const Navigation = () => {
         padding={".5em 0 1em 0"}
         cursor="pointer"
       >
-        <Flex width="70%" mx="auto">
+        <Flex width={{xl:"70%", base:"fit-content"}} mx="auto">
           <RI.RiLogoutBoxRLine style={{ transform: "translateY(.3em)" }} />
-          <Text fontSize="13px" transform="translate(.7em,.3em)">
+          <Text display={{xl:"block", base:"none"}} fontSize="13px" transform="translate(.7em,.3em)">
             LOGOUT
           </Text>
         </Flex>
@@ -93,12 +93,13 @@ function NavItem({ link }: { link: ILink }) {
         color: !link.active ? scheme.accent : "",
       }}
     >
-      <Flex width="70%" mx="auto">
+      <Flex width={{xl:"70%", base:"fit-content"}} mx="auto">
         <Icon style={{ transform: "translateY(.3em)" }} />
         <Text
           fontSize="13px"
           fontWeight={link?.active ? "extrabold" : "normal"}
           transform="translate(.7em,.3em)"
+          display={{xl:"block", base:"none"}}
         >
           {link.name}
         </Text>
