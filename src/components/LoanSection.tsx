@@ -10,7 +10,7 @@ const LoanSection = () => {
       overflow="hidden"
       position="relative"
       transform="translateY(3.7em)"
-      p={{lg:"20px", base:"20px 0"}}
+      p={{lg:"20px", base:"18px 0"}}
       textAlign={{lg:"left", base:"center"}}
       _after={{
         content: "''",

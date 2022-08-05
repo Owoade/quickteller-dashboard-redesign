@@ -11,7 +11,7 @@ const AddBankAccount = () => {
     p={5}
     width={{lg:"fit-content", base:"33%"}}
     borderRadius="10px"
-    height="fit-content"
+    height="100%"
     boxShadow={scheme.shadow}
     color="brand.logo"
     fontSize="23px"

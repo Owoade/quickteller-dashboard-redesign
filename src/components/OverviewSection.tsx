@@ -7,7 +7,7 @@ import LoanSection from "./LoanSection";
 
 const OverviewSection = () => {
   return (
-    <Flex w="100%" pt="1.5em" justifyContent={"space-between"}>
+    <Flex w="100%" height="100%" pt="1.5em" justifyContent={"space-between"}>
       <CreditCardContextProvider>
         <CardSection />
       </CreditCardContextProvider>

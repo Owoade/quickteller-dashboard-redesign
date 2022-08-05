@@ -70,7 +70,6 @@ const AnalyticsSection = () => {
                 { legend.expense }
               </chakra.span>
             </HStack>
-
           ))}
         </Box>
       </Flex>

@@ -6,7 +6,7 @@ import Wrapper from "./Wrapper";
 
 const MainContent = () => {
   return (
-    <Box height="100%" pb={5} bgColor={"brand.bgContrast"} width={{xl:"80%", base: "95%"}} ml={{xl:"20%", base: "6.1%"}}>
+    <Box height="100%" pb={5} bgColor={"brand.bgContrast"} width={{xl:"80%", base: "93.9%"}} ml={{xl:"20%", base: "6.1%"}}>
       <Header />
       {/* Body */}
       <Wrapper>

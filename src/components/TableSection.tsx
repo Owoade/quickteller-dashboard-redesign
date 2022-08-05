@@ -1,5 +1,5 @@
 import { Box, Flex, chakra, HStack } from "@chakra-ui/react";
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useNavigate } from "react-router-dom";
 import DropDown from "./DropDown";
 import TableMain from "./TableMain";
 
@@ -37,7 +37,7 @@ export const links: ILink[] = [
 const TableSection = () => {
   const ChakraLink = chakra(Link);
   const { transactionType } = useParams();
-
+  const navigate=useNavigate()
   const activeLink = transactionType ?? "All";
 
   
