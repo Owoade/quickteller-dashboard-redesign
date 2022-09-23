@@ -1,5 +1,6 @@
 import { Box, HStack } from "@chakra-ui/react";
 import React from "react";
+import { ThemeContext } from "../../App";
 import { cardStack } from "../../contexts/CreditCardContext";
 import Card from "../Card";
 import Slider from "../Slider";
@@ -7,8 +8,9 @@ import Slider from "../Slider";
 type Props = {};
 
 function M_CardCarousel({}: Props) {
+
   return (
-    <Box w="100%" overflowX="hidden" mb={5}>
+    <Box w="100%" overflowX="hidden"  mb={5}>
       <Slider>
         <HStack width="fit-content" overflowX="scroll">
           {cardStack[0].map((card) => (
