@@ -87,7 +87,7 @@ const Card = ({ bank, type, balance }: ICardType) => {
         opacity: 0.3,
       }}
       p={"20px"}
-      width={{sm:"100%", base: "300px"}}
+      width={{sm:"100%", base: "290px"}}
       boxSizing="border-box"
     >
      { bank === "main" ? <Grid
