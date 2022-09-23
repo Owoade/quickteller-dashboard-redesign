@@ -8,7 +8,7 @@ type Props = {};
 
 function M_CardCarousel({}: Props) {
   return (
-    <Box w="100%" overflowX="hidden">
+    <Box w="100%" overflowX="hidden" mb={3}>
       <Slider>
         <HStack width="fit-content" overflowX="scroll">
           {cardStack[0].map((card) => (

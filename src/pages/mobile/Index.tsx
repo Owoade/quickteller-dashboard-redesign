@@ -45,9 +45,9 @@ export default function Index() {
               ></IconButton>
             </Flex>
             <M_CardCarousel />
-            <M_TransactionSection />
           </Box>
         </Wrapper>
+        <M_TransactionSection />
       </Box>
     </Box>
   );
