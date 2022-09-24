@@ -65,8 +65,8 @@ const TableMain = () => {
                     <HStack>
                       {" "}
                       <chakra.span
-                        border={`1px solid ${getStatusColor(text)}`}
-                        color={getStatusColor(text)}
+                        border={`1px solid ${getStatusColor(text)[0]}`}
+                        color={getStatusColor(text)[0]}
                         borderRadius="20px"
                         p={"1px 8px"}
                         height="fit-content"
@@ -144,57 +144,103 @@ const TableMain = () => {
     return <Td fontSize="12px"> {_string} </Td>;
   }
 
-  function getServiceProviderLogo(_desc: string) {
-    const phoneNumber = _desc.split("*")[0];
-    const serviceProvider = _desc.split("*")[1];
 
-    let logoSrc = "";
 
-    switch (serviceProvider) {
-      case "MTN":
-        logoSrc =
-          "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/mtn_nsxpsr.jpg";
-        break;
-
-      case "Airtel":
-        logoSrc =
-          "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/airtel_eibeb6.jpg";
-        break;
-
-      case "GLO":
-        logoSrc =
-          "https://res.cloudinary.com/dles2mycv/image/upload/v1657897278/glo_jjubtm.png";
-        break;
-
-      case "9M":
-        logoSrc =
-          "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/9mobile_zq1cpk.png";
-        break;
-    }
-
-    return (
-      <Td>
-        <HStack>
-          {" "}
-          <chakra.span fontSize="12px"> {phoneNumber}</chakra.span>{" "}
-          <Image w="16px" h="16px" src={logoSrc} />{" "}
-        </HStack>
-      </Td>
-    );
-  }
-
-  function getStatusColor(status: "Success" | "Pending" | "Failed") {
-    switch (status) {
-      case "Success":
-        return "#36D277";
-
-      case "Pending":
-        return "#F5D77C";
-
-      case "Failed":
-        return "#F08585";
-    }
-  }
+ 
 };
 
 export default TableMain;
+
+export function getStatusColor(status: "Success" | "Pending" | "Failed") {
+  switch (status) {
+    case "Success":
+      return ["#36D277", "#57f99a3d"];
+
+    case "Pending":
+      return ["#f9d357", "#f9f1573d"];
+
+    case "Failed":
+      return ["#df1111", "#f957573d"];
+  }
+}
+
+export function getServiceProviderLogo(_desc: string,justImage?: boolean) {
+  const phoneNumber = _desc.split("*")[0];
+  const serviceProvider = _desc.split("*")[1];
+
+  let logoSrc = "";
+
+  switch (serviceProvider) {
+    case "MTN":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/mtn_nsxpsr.jpg";
+      break;
+
+    case "Airtel":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/airtel_eibeb6.jpg";
+      break;
+
+    case "GLO":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897278/glo_jjubtm.png";
+      break;
+
+    case "9M":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/9mobile_zq1cpk.png";
+      break;
+  }
+  
+  if( justImage ) return <Image w="16px" h="16px" src={logoSrc} />
+  return (
+    <Td>
+      <HStack>
+        {" "}
+        <chakra.span fontSize="12px"> {phoneNumber}</chakra.span>{" "}
+        <Image w="16px" h="16px" src={logoSrc} />{" "}
+      </HStack>
+    </Td>
+  );
+}
+
+export function getBankLogo(accountString: string, justImage?: boolean) {
+  const accountNo = accountString.split("*")[0];
+  const bankName = accountString.split("*")[1];
+
+  let logoSrc = "";
+
+  switch (bankName) {
+    case "UBA":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/uba_e3tdi1.jpg";
+      break;
+
+    case "KUDA":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897278/kuda_ogkvf8.jpg";
+      break;
+
+    case "GTB":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897278/gtbank_aftdvy.jpg";
+      break;
+
+    case "FB":
+      logoSrc =
+        "https://res.cloudinary.com/dles2mycv/image/upload/v1657897277/First-Bank-Logo-300x300_nut3es.png";
+      break;
+  }
+
+  if( justImage) return <Image w="16px" h="16px" src={logoSrc} />
+
+  return (
+    <Td>
+      <HStack>
+        {" "}
+        <chakra.span fontSize="12px"> {accountNo}</chakra.span>{" "}
+        <Image w="16px" h="16px" src={logoSrc} />{" "}
+      </HStack>
+    </Td>
+  );
+}

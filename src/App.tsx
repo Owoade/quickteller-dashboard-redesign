@@ -35,6 +35,7 @@ function App() {
               <Route path="/" element={<Home />}></Route>
               <Route path="/transactions/:transactionType" element={<Home />}></Route>
               <Route path="/mobile" element={<Index />}></Route>
+              <Route path="/mobile/transactions/:transactionType" element={<Index />}></Route>
             </Routes>
           </BrowserRouter>
         </div>

@@ -3,13 +3,13 @@ const tableNames = [
   "Airtime Purchase",
   "Bill Payments",
   "Money Transfer",
-  "eCash",
+  // "eCash",
   "Loans",
 ] as const;
 
 export type TableNameType = typeof tableNames[number];
 
-interface ITable {
+ export interface ITable {
   type: TableNameType;
   heading: string[];
   data: Array<Array<any>>;
