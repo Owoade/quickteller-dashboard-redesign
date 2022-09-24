@@ -26,7 +26,7 @@ export default function Index() {
       <Box
         bgColor="brand.bgContrast"
         color="brand.typography"
-        height="100vh"
+        height="100%"
         width="100%"
       >
         <Wrapper>
