@@ -7,7 +7,7 @@ function M_TransactionList() {
   const { type } = useContext(TransactionContext);
   const filteredTableData = tableData.find(t => t.type === type ) as ITable ?? tableData[0]
   return (
-    <Box>
+    <Box my={3}>
         {
           filteredTableData.data.map( data => <M_TransactionCard data={data} />)
         }

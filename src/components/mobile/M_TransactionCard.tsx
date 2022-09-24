@@ -11,10 +11,10 @@ function M_TransactionCard({ data } : { data: any }) {
         <HStack>
           <Heading color={"brand.typoContrast2"} size={"sm"}>{type === "Airtime Purchase" || type === "Money Transfer" ? data[1].split("*")[0] : data[1] }</Heading>
           {
-            type === "Airtime Purchase"  && getServiceProviderLogo(data[1].split("*")[1], true) 
+            type === "Airtime Purchase"  && getServiceProviderLogo(data[1], true) 
           }
           {
-            type === "Money Transfer" && getBankLogo(data[1].split("*")[1], true)
+            type === "Money Transfer" && getBankLogo(data[1], true)
           }
         </HStack>
         <Spacer />
