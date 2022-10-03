@@ -3,10 +3,12 @@ import { tableData } from "../../utils/data";
 import { getBankLogo, getServiceProviderLogo, getStatusColor } from "../TableMain";
 import React from "react";
 import { TransactionContext } from "../../contexts/TransactionContext";
+import { ThemeContext } from "../../App";
 function M_TransactionCard({ data } : { data: any }) {
     const { type } = React.useContext(TransactionContext)
+    const { scheme } = React.useContext(ThemeContext)
   return (
-    <Box width={"100%"} mb={3} bgColor="brand.bgMain" borderRadius={"5px"} p={3}>
+    <Box width={"100%"} boxShadow={scheme.shadow} mb={3} bgColor="brand.bgMain"  borderRadius={"5px"} p={3}>
       <Flex width="100%">
         <HStack>
           <Heading color={"brand.typoContrast2"} size={"sm"}>{type === "Airtime Purchase" || type === "Money Transfer" ? data[1].split("*")[0] : data[1] }</Heading>
