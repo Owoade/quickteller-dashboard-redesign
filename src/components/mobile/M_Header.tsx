@@ -12,7 +12,7 @@ export default function M_Header() {
 
   const ThemeIcon = theme === "light" ? RiMoonFill : RiSunFill;
   return (
-    <Box width="100%" bgColor={"brand.bgMain"} py={3} position="sticky" top={0} zIndex={3} >
+    <Box width="100%" bgColor={"brand.bgMain"} boxShadow={scheme.shadow} py={3} position="sticky" top={0} zIndex={3} >
       <Wrapper>
         <Flex w="100%">
           <M_Logo />
